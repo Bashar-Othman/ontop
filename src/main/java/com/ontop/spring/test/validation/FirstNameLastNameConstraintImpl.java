@@ -19,7 +19,7 @@ public class FirstNameLastNameConstraintImpl implements ConstraintValidator<Firs
     public boolean isValid(String value, ConstraintValidatorContext context) {
         Pattern p = Pattern.compile("[^A-Za-z ]");
         Matcher matcher = p.matcher(value);
-        if (matcher.find()) {
+        if (!matcher.find()) {
             return false;
         }
 
